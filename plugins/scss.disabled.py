@@ -16,12 +16,13 @@ sudo easy_install pyScss
 """
 
 try:
-    from scss import Scss
+    from scss import Scss, config
 except:
     sys.exit("Could not find pyScss, please install: sudo easy_install pyScss")
 
 
 CSS_PATH = 'static/css'
+config.LOAD_PATHS = [CSS_PATH]
 
 for path in fileList(CSS_PATH):
 
@@ -31,7 +32,9 @@ for path in fileList(CSS_PATH):
     with open(path, 'r') as f:
         data = f.read()
 
-    css = Scss().compile(data)
+    css = Scss(scss_opts={
+        'debug_info': True,
+    }).compile(data)
 
     with open(path.replace('.scss', '.css'), 'w') as f:
         f.write(css)
