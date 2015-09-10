@@ -1,0 +1,13 @@
+{
+  "prettify": true,
+  "site": "mitsfs.mit.edu",
+  "provider": "google",
+  "optimize": [
+    "js",
+    "css"
+],
+"fingerprint": [
+    "js",
+    "css"
+]
+}
