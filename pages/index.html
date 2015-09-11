@@ -1,37 +1,51 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="jumbotron">
-  <div class="container">
-    <h1>Welcome to Cactus!</h1>
-    <p>Get started with this template based on HTML 5 Boilerplate. Go ahead, explore!</p>
-  </div>
-</div>
 
 <div class="container">
   <!-- Example row of columns -->
   <div class="row">
+    <div class="col-lg-7">
+      <h1>Welcome to MITSFS</h1>
+      <p> The world's largest public open-shelf collection of science fiction is the MITSFS Library.  Our database of books can be
+        <a href="http://mitsfs.mit.edu/pinkdex/">searched here</a> or examined in
+        <i>/afs/athena.mit.edu/activity/m/mitsfs/Public/datadex</i>.
+        (On MIT Athena, <tt>cd /mit/mitsfs/Public</tt>.)  We have both
+        fantasy and high-tech sf, including sf horror; our collection includes
+        some foreign-language material and science-fiction related books as well.</p>
 
-    <div class="col-lg-3">
-      <h2>Full featured template engine</h2>
-      <p>Cactus uses and extends Django's templating engine. If you've built sites using Django before, you'll feel right at home.</p>
+      <p> Anyone can come and browse whenever the Library is open (see the
+        <a href="www/schedule.txt">schedule</a>), and members can borrow from our
+        circulating section.  We can be contacted at <b>mitsfs@mit.edu</b>.
+        Membership is solely a matter of <a href="www/dues.html">dues</a> and is not
+        restricted to MIT students. (But if you're not in the area, there's no
+        point, though we welcome the donation.)</p>
+
+      <p> If you have any questions about donating books to our collection,
+          please see our <a href="www/donation-faq.html">Donation FAQ</a>.</p>
+      <p>
+        We are located on the 4th floor of the Student Center, in W20-473:<br>
+        <a href="http://whereis.mit.edu/map-jpg?section=directions">Getting to MIT</a><br>
+        <a href="http://whereis.mit.edu/map-jpg?mapterms=W20&mapsearch=go">Finding W20</a><br>
+        <a href="www/fourth.gif">Outline of W20-4 (gif)</a><br>
+        <a href="https://floorplans.mit.edu/pdfs/W20_4.PDF">W20-4 floorplan (PDF)</a>
+            (floorplans are MIT-access only)<br>
+      </p>
+
+      <p> Email to <b>mitsfs@mit.edu</b> is the best way to talk to us, though
+          you can also call 617-258-5126 (aka MIT x8-5126).  Send snailmail to</p>
+      <p>
+        <pre>MIT Science Fiction Society<br>W20-473<br>84 Massachusetts Avenue<br>Cambridge, MA 02139-4307</pre>
+      </p>
+
+      <p> These pages maintained by various people.  Send questions or comments
+          to <b>mitsfs@mit.edu</b>.</p>
     </div>
 
-    <div class="col-lg-3">
-      <h2>Pretty URLs</h2>
-      <p>Cactus can prettify URLs, so you can turn <code>/about.html</code> into a fancier <code>/about/</code>.</p>
+    <div class="col-lg-5">
+      <h1>Upcoming Events!</h1>
+      <iframe src="https://www.google.com/calendar/embed?title=MITSFS%20Events&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=e4bij68ddubsenh0tttpto86bk%40group.calendar.google.com&amp;color=%23FFFFFF&amp;ctz=America%2FNew_York" style=" border-width:0" width="375" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
-
-    <div class="col-lg-3">
-      <h2>Minification & Fingerprinting</h2>
-      <p>For maximum performance, Cactus can minify and fingerprint your static assets. As for your pages, Cactus will automatically compress them.</p>
-   </div>
-
-    <div class="col-lg-3">
-      <h2>And much more</h2>
-      <p>There's of course a lot more you can do with Cactus. Plus, Cactus's plugin framework lets you easily extend its functionality.</p>
-   </div>
-
 
   </div>
 </div>
