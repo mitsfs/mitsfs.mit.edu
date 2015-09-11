@@ -1,0 +1,28 @@
+//== MIT Colors
+$mit-red:                #A31F34;
+$mit-dark-gray:          #8A8B8C;
+$mit-light-gray:         #C2C0BF;
+$banana-yellow:          #ffc701;
+
+$navbar-inverse-color:                      lighten($mit-light-gray, 15%);
+$navbar-inverse-bg:                         $mit-red;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%);
+
+$navbar-inverse-link-color:                 $navbar-inverse-color;
+$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 5%);
+
+$jumbotron-bg:                              lighten($banana-yellow, 0%);
+
+$border-radius-base:        2px;
+$border-radius-large:       4px;
+$border-radius-small:       1px;
+
+
+$body-bg:                   lighten($banana-yellow, 30%);
+
+
+@import "bootstrap";
+
+.navbar-brand {
+  padding: ($navbar-padding-vertical - 5px) $navbar-padding-horizontal;
+}
