@@ -1,0 +1,21 @@
+MITSFS Static Website Generator
+
+DEPENDENCIES:
+
+pip install Cactus
+
+Also you must install
+sass >= 3.3.0
+
+For production builds
+closure-compilier
+yuicompressor
+
+TESTING
+cactus build # Test build
+cactus server # Build and serve
+
+PRODUCTION
+cactus build -c production.json
+
+Copy/rsync the .build directory to the production location
