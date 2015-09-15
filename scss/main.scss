@@ -21,6 +21,16 @@ $border-radius-small:       1px;
 $body-bg:                   lighten($banana-yellow, 30%);
 
 
+//** Default background color used for all tables.
+$table-bg:                      transparent;
+//** Background color used for `.table-striped`.
+$table-bg-accent:               lighten($banana-yellow, 20%);
+//** Background color used for `.table-hover`.
+$table-bg-hover:                lighten($banana-yellow, 10%);
+//** Border color for table and cell borders.
+$table-border-color:            lighten($mit-light-gray, 0%);
+
+
 @import "bootstrap";
 
 .navbar-brand {
