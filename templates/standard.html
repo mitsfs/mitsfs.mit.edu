@@ -2,8 +2,16 @@
 {% block body %}
 
 <div class="container">
-  <h1>{{ title }}</h1>
-  {% block content %}
-  {% endblock %}
+  <div class="row">
+    <div class="col-lg-7">
+      <h1>{{ title|default:"MIT Science Fiction Society" }}</h1>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="col-lg-5">
+      {% block side_content %}
+      {% endblock %}
+    </div>
+  </div>
 </div>
 {% endblock %}
