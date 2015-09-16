@@ -2,119 +2,60 @@ title: Donations
 {% extends "standard.html" %}
 {% block content %}
 
-<p> MITSFS gets a lot of donations and questions about donation processes.  
-For some of the more common questions, please refer to this list.  For more 
-complicated or detailed questions, please email <b>trojan@mit.edu</b> </p>
-
-<p><i>Please note that MITSFS cannot promise tax credit letters for donations of books at this time.</i></p>
+  <p> MITSFS gets a lot of donations and questions about donation processes. For some of the more common questions, please refer to this list.  For more complicated or detailed questions, please email {{ "mitsfs@mit.edu"|urlize }}</p>
 
 <ul>
+  <li>
+    <p><strong>Q. What can I donate?</strong></p>
+    <p>A. While you <strong>can</strong> donate almost anything, 
+    we will not be able to keep anything that is not within the realm of science fiction or fantasy. (If you are unsure, please ask us!  We'll give you an educated guess.) Books and magazines are the most common  donations, but we will selectively accept CDs, posters, etc.  If you want to  know if we can use something that is not a bound volume, stop by the library or email <strong>{{ "mitsfs@mit.edu"|urlize }}</strong></p>
+    
+  </li>
 
-<p><a href="#ShowAnswer1">What can I donate?</a></p>
-<p><a href="#ShowAnswer2">I have a large collection to donate.  Can you take it off my hands?</a></p>
-<p><a href="#ShowAnswer3">Can I send my donation in multiple batches?</a></p>
-<p><a href="#ShowAnswer4">Can I donate books/magazines in another language?</a></p>
-<p><a href="#ShowAnswer5">What can I donate that will be most useful to the library?</a></p>
-<p><a href="#ShowAnswer6">How will you know the donation is coming?</a></p>
-<p><a href="#ShowAnswer7">How can I get the donation to you?</a></p>
-<p><a href="#ShowAnswer8">Can I get library credit/a letter of acknowledgement/tax credit?</a></p>
-<!--
-<p><a href="#ShowAnswer9">What is the tax credit letter?</a></p>
-<p><a href="#ShowAnswer10">Can you just send me an unofficial letter stating the estimated value of the donation?</a></p>
-<p><a href="#ShowAnswer11">Why haven't I received my letter yet?</a></p>
--->
-<li>
-<p><b>Q. What can I donate?</b></p>
-<a name="ShowAnswer1"><p>A. While you <b>can</b> donate almost anything, 
-we will not be able to keep anything that is not within the realm of science 
-fiction or fantasy.  (If you are unsure, please ask us!  We'll give you an 
-educated guess.)  Books and magazines are the most common 
-donations, but we will selectively accept CDs, posters, etc.  If you want to 
-know if we can use something that is not a bound volume, stop by the library 
-or email <b>mitsfs@mit.edu</b></p></a>
+  <li>
+    <p><strong>Q. I want to give a monatary donation to the library how do I do that?</strong></p>
+    <p>A. Go to <strong><a href="https://giving.mit.edu/givenow/search-designations.dyn?keyword=3655500">giving.mit.edu</a></strong>, select <strong>Add to my gift form</strong> for <strong>Science Fiction Library Fund (3655500)</strong> and follow to instructions. Or you can buy a <strong><a href="{% url '/memberships.html' %}">permenant membership</a></strong>.</p>
+  </li>
 
-<li>
-<p><b>Q. I have a large collection to donate.  Can you take it off my hands?</b></p>
-<a name="ShowAnswer2"><p>
-A. Probably.  If the donation is larger than a couple hundred books, please 
-discuss it with us first.  Email <b>mitsfs@mit.edu</b> with details and we'll discuss
-if we can take your collection.</p></a>
+  <li>
+    <p><strong>Q. I have a large collection to donate.  Can you take it off my hands?</strong></p>
+    <p>A. Maybe.  If the donation is larger than a couple hundred books, please discuss it with us first. Email <strong>{{ "mitsfs@mit.edu"|urlize }}</strong> with details and we'll discuss if we can take your collection.</p>
+  </li>
 
-<li>
-<p><b>Q. Can I send my donation in multiple batches?</b></p>
-<a name="ShowAnswer3"><p>A. Yes, but unless we 
-know how many boxes to wait for, we'll process each batch of boxes we receive
-separately.</p></a>
+  <li>
+    <p><strong>Q. Can I send my donation in multiple batches?</strong></p>
+    <p>A. Yes, but unless we know how many boxes to wait for, we'll process each batch of boxes we receive separately.</p>
+  </li>
 
-<li>
-<p><b>Q. Can I donate books/magazines in another language?</b></p>
-<a name="ShowAnswer4"><p>A. Yes, we have a
-collection of science fiction and fantasy in foreign languages.  Please make 
-sure that the donations are within the realm of science fiction or fantasy.  We also appreciate a translation of the title and author into
-English if possible.</p></a>
+  <li>
+    <p><strong>Q. Can I donate books/magazines in another language?</strong></p>
+    <p>A. Yes, we have a collection of science fiction and fantasy in foreign languages.  Please make sure that the donations are within the realm of science fiction or fantasy.  We also appreciate a translation of the title and author into English if possible.</p>
+  </li>
 
-<li>
-<p><b>Q. What can I donate that will be most useful to the library?</b></p>
-<a name="ShowAnswer5"><p>A. Please donate space.  We need it more than books.  Email 
-<b>war-council@mit.edu</b> if you have ideas, influence with the ASA space 
-allocations process, or a lot of money lying around.  In terms of books, we especially appreciate the donation of books we do not already have.  Please reference our <a href="http://mitsfs.mit.edu/pinkdex/">database</a> to see if we already have a specific item.</p></a>
+  <li>
+    <p><strong>Q. What can I donate that will be most useful to the library?</strong></p>
+    <p>A. Please donate space.  We need it more than books. Email <strong>{{ "mitsfs@mit.edu"|urlize }}</strong> if you have ideas or a lot of money lying around. Money is useful. In terms of books, we especially appreciate the donation of books we do not already have.  Please reference our <strong><a href="{% url '/pinkdex.html' %}">database</a></strong> to see if we already have a specific item.</p>
+  </li>
 
-<li>
-<p><b>Q. How will you know the donation is coming?</b></p>
-<a name="ShowAnswer6"><p>A. Please email 
-<b>trojan@mit.edu</b> in advance so we know a donation is coming.  Please include what
-sort of credit you expect to get from the donation (see below).</p></a>
+  <li>
+    <p><strong>Q. How will you know the donation is coming?</strong></p>
+    <p>A. Please email <strong>{{ "trojan@mit.edu"|urlize }}</strong> in advance so we know a donation is coming. Please let us know if you want library credit or just a thank you note.</p>
+  </li>
 
-<li>
-<p><b>Q. How can I get the donation to you?</b></p>
-<a name="ShowAnswer7"><p>A. Small donations can be mailed
-to us or dropped off at the library when it is open.  We are willing to pick up
-larger donations from locations in the Boston metro area, but scheduling will 
-be awkward, as our keyholders have classes and/or work and busy schedules.</p></a>
+  <li>
+    <p><strong>Q. How can I get the donation to you?</strong></p>
+    <p>A. Small donations can be mailed to us or dropped off at the library when it is open.  We are willing to pick up larger donations from locations in the Boston metro area, but scheduling may be awkward, as our keyholders have classes and/or work and busy schedules.</p>
+  </li>
 
-<li>
-<p><b>Q. Can I get library credit/a letter of acknowledgement/tax credit?</b></p>
-<a name="ShowAnswer8"><p>A.
-You can receive library credit for your donation.  However, at present we can't 
-provide tax credit letters.</p></a>
-
-<!--
-
-<li>
-<p><b>Q. What is the tax credit letter?</b></p>
-<a name="ShowAnswer9"><p>A. We can provide you with an 
-official gift (to a non-profit organization, MIT) acknowledgement letter 
-signed by the President of our Society and by the MIT Gifts Office.  It 
-specifies how many hardcovers/paperbacks/magazines you donated (and anything 
-else, if relevant), what condition they were in and why (i.e. "Most of the 
-paperbacks in poor condition were due to water damage."), and any other 
-information relevant to the Library (i.e. "We especially appreciate the large 
-numbers of books new to our collection.").  The tax credit letter we provide 
-does <b>not</b> give an estimated value of the donation.  You are responsible
-for determining the value of the donation if you require the value for tax
-purposes.  Please do this before donating, as the donation may not be
-easily separable from our collection after processing.  MIT, and by extension, 
-MITSFS, is not permitted to estimate the value of the donation.</p></a>
-
-<li>
-<p><b>Q. Can you just send me an unofficial letter stating the estimated value of the donation?</b></p>
-<a name="ShowAnswer10"><p>A. Sorry, we cannot.  We will send you a letter saying 
-what you donated and it is up to you to justify to the IRS your estimated 
-value for it.</p></a>
-
-<li>
-<p><b>Q. Why haven't I received my letter yet?</b></p>
-<a name="ShowAnswer11"><p>A. Donation processing, which must be completed
-before we can write a tax letter, is a multi-step process which requires
-coordinating multiple volunteers (mostly MIT students) and the MIT Gifts
-Office.  Donation letters often take several months, but we do make special
-effort to ensure that letterse are sent in time for donors to use them on 
-their taxes for the relevant year.  If you have a special deadline, please let
-us know before making the donation and we will try to accomodate it.</p></a>
-
--->
-
+  <li>
+    <p><strong>Q. Can I get library credit/a letter of acknowledgement/tax credit?</strong></p>
+    <p>A. You can receive library credit for your donation just let us know.</p>
+  </li>
+  
+  <li> 
+    <p><strong>Q. Is my donation tax deductable?</strong></p>
+    <p>A. All donations for which you don't recieve library credit are tax deductible. Appraising you donation if required and filling out any IRS paperwork is your responisibility. We will however be happy to send you a letter of acknolagement/thank you note for you donation. </p>
+  </li>
 </ul>
-</div>
 {% endblock %}
 
