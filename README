@@ -2,7 +2,7 @@ MITSFS Static Website Generator
 
 DEPENDENCIES:
 
-pip install Cactus
+pip install cactus
 
 Also you must install
 sass >= 3.3.0

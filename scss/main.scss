@@ -33,6 +33,36 @@ $table-border-color:            lighten($mit-light-gray, 0%);
 
 @import "bootstrap";
 
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
 .navbar-brand {
   padding: ($navbar-padding-vertical - 5px) $navbar-padding-horizontal;
+}
+
+.schedule-container {
+  background-color: lighten($mit-light-gray, 20%);
+  padding: 10px 0 0 20px;
+}
+
+
+.dhx_cal_container {
+  background-color: lighten($mit-light-gray, 20%);
+  height: 600px;
+  width: 100%;
+}
+
+.dhx_scale_holder {
+  background-color: #fff !important;
+}
+
+.dhx_scale_holder_now {
+  background-color: lighten($banana-yellow, 35%);
+}
+
+.dhx_cal_navline .dhx_cal_date {
+  font-size: 16px;
 }

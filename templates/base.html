@@ -7,13 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="{% static '/static/images/favicon.ico' %}">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+        {% block css %}
+        {% endblock %}
+        <link rel="stylesheet" href="{% static '/static/css/main.css' %}"> 
         <script src="{% static '/static/js/vendor/modernizr-2.6.2.js' %}"></script>
     </head>
 
