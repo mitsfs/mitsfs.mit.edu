@@ -6,17 +6,19 @@ title: Schedule
 {% endblock %}
 
 {% block scripts %}
+<script src="{% static '/static/js/ical.js' %}" type="text/javascript"></script>
 <script src="{% static '/static/scheduler/dhtmlxscheduler.js' %}" type="text/javascript"></script>
+<script src="{% static '/static/scheduler/dhtmlxscheduler_multisource.js' %}" type="text/javascript"></script>
+<script src="{% static '/static/scheduler/dhtmlxscheduler_recurring.js' %}" type="text/javascript"></script>
+<script src="{% static '/static/scheduler/dhtmlxscheduler_ical.js' %}" type="text/javascript"></script>
 <script>
   //scheduler.config.show_loading = true;
-  scheduler.config.drag_create = false;
-  scheduler.config.dblclick_create = false;
-  scheduler.config.scroll_hour = 1200;
+  scheduler.config.readonly = true;
+  scheduler.config.first_hour = 12;
   scheduler.config.show_quick_info = false;
+  scheduler.config.occurrence_timestamp_in_utc = true;
   scheduler.init('mitsfs_schedule', new Date(),"week");
-  scheduler.load("http://calendar.mitsfs.scripts.mit.edu/events.php");
-
-    "https://www.google.com/calendar/feeds/nec0mqhbmvui36s0bndfi0o918%40group.calendar.google.com/public/basic"
+  scheduler.load(["http://calendar.mitsfs.scripts.mit.edu/events", "http://calendar.mitsfs.scripts.mit.edu/schedule"] , 'ical');
 </script>
 {% endblock %}
 
