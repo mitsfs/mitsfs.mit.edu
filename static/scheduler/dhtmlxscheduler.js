@@ -1995,8 +1995,13 @@ scheduler.set_sizes=function(){
 	//not-table mode always has scroll - need to be fixed in future
 	var scale_x=this._table_view?0:(this.xy.scale_width+this.xy.scroll_width);
 	var scale_s=this._table_view?-1:this.xy.scale_width;
-	
-	this.set_xy(this._els["dhx_cal_navline"][0],w,this.xy.nav_height,0,0);
+    this.xy._nav_height = this.xy._nav_height || this.xy.nav_height;
+	if (window.innerWidth > 768) {
+        this.xy.nav_height = this.xy._nav_height;
+    } else {
+        this.xy.nav_height = this.xy._nav_height * 1.5;
+    }
+    this.set_xy(this._els["dhx_cal_navline"][0],w,this.xy.nav_height,0,0);
 	this.set_xy(this._els["dhx_cal_header"][0],w-scale_x,this.xy.scale_height,scale_s,this.xy.nav_height+(this._quirks?-1:1));
 	//to support alter-skin, we need a way to alter height directly from css
 	var actual_height = this._els["dhx_cal_navline"][0].offsetHeight;

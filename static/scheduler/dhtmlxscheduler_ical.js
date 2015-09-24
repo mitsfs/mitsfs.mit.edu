@@ -27,6 +27,7 @@ scheduler.ical = {
         start_date: event.startDate.toJSDate(),
         end_date: event.endDate.toJSDate(),
         details: event.description,
+        location: event.location,
         event_pid: 0
       };
       if (event.isRecurring()) {

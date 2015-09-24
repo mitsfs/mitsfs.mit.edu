@@ -1191,7 +1191,7 @@ div.icon_delete {
   border-bottom: 1px solid #b6b6b6;
 }
 /* bootstrap CSS fix start */
-.dhx_cal_navline div,
+/* .dhx_cal_navline div, */
 .dhx_cal_header,
 .dhx_cal_header div,
 .dhx_cal_data,
@@ -1232,15 +1232,17 @@ div.icon_delete {
 }
 .dhx_cal_navline {
   height: 20px;
-  position: absolute;
+/*  position: absolute; */
   z-index: 3;
   width: 750px;
   color: #2F3A48;
 }
-.dhx_cal_navline div {
-  position: absolute;
-  top: 2px;
+.dhx_cal_navline > div {
+/*  position: absolute; */
   white-space: nowrap;
+}
+.dhx_cal_navline > div > div {
+  display: inline-block;
 }
 .dhx_cal_navline .dhx_cal_date {
   font-weight: 600;
@@ -1763,11 +1765,13 @@ div.dhx_menu_icon {
   font-family: "Segoe UI", Arial;
   font-weight: lighter;
   font-size: 22px;
-  text-align: center;
+/*  text-align: center; */
   top: 14px;
-  position: absolute;
+/*  padding-left: 15px;
+  position: absolute; 
   left: 0;
   width: 100%;
+  */
   z-index: -1;
 }
 .dhx_cal_today_button {

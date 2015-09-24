@@ -11,12 +11,38 @@ title: Schedule
 <script src="{% static '/static/scheduler/dhtmlxscheduler_multisource.js' %}" type="text/javascript"></script>
 <script src="{% static '/static/scheduler/dhtmlxscheduler_recurring.js' %}" type="text/javascript"></script>
 <script src="{% static '/static/scheduler/dhtmlxscheduler_ical.js' %}" type="text/javascript"></script>
+<script src="{% static '/static/scheduler/dhtmlxscheduler_tooltip.js' %}"  type="text/javascript"></script>
+
 <script>
   //scheduler.config.show_loading = true;
   scheduler.config.readonly = true;
   scheduler.config.first_hour = 12;
   scheduler.config.show_quick_info = false;
   scheduler.config.occurrence_timestamp_in_utc = true;
+  scheduler.config.day_date = "%D %m/%d";
+  scheduler.config.default_date = "%l, %M-%d, %Y";
+  dhtmlXTooltip.config.className = 'dhtmlXTooltip tooltip'; 
+  scheduler.templates.tooltip_text = function(start,end,event) {
+    if (event.calendar_name === "mitsfs_events"){
+      return "<h4>"+event.text+"</h4><strong>Where:</strong> "+event.location + "<br><strong>Details:</strong> " + event.details
+    } else {
+      return null; 
+    }
+  };
+  scheduler.templates.week_date = function(start, end){
+    var d=scheduler.date.date_to_str;
+    var end = scheduler.date.add(end,-1,"day")
+    if (start.getFullYear() !== end.getFullYear()){
+      return d("%M %d, %Y")(start) + " &ndash; "+ d("%M %d, %Y")(end)
+    } else if (start.getMonth() !== end.getMonth()){
+      return d("%M %d")(start) + " &ndash; "+ d("%M %d, %Y")(end)
+    } else {
+      return d("%M %d")(start) + " &ndash; "+ d("%d, %Y")(end)
+    }
+  };
+  scheduler.templates.day_scale_date = function(date){
+    return scheduler.date.date_to_str("%D %m/%d")(date);
+  };
   scheduler.init('mitsfs_schedule', new Date(),"week");
   scheduler.load(["http://calendar.mitsfs.scripts.mit.edu/events", "http://calendar.mitsfs.scripts.mit.edu/schedule"] , 'ical');
 </script>
@@ -26,16 +52,20 @@ title: Schedule
 {% block content %}
 <div class="panel schedule-container">
   <div id="mitsfs_schedule" class="dhx_cal_container panel">
-    <div class="dhx_cal_navline">
-      <div class="dhx_cal_prev_button">&nbsp;</div>
-      <div class="dhx_cal_next_button">&nbsp;</div>
-      <div class="dhx_cal_today_button"></div>
-      <div class="dhx_cal_date"></div>
-      <div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
-      <div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+    <div class="dhx_cal_navline row">
+    <div class="col-sm-7" style="padding-left:0px">
+        <div class="dhx_cal_today_button"></div>
+        <div class="dhx_cal_date"></div>
+      </div>
+      <div class="col-sm-5" style="padding-right: 4px;">
+        <div class="dhx_cal_tab pull-right" name="week_tab"></div>
+        <div class="dhx_cal_tab pull-right" name="day_tab"></div>
+        <div class="dhx_cal_next_button pull-right">&nbsp;</div>
+        <div class="dhx_cal_prev_button pull-right">&nbsp;</div>        
+      </div>
     </div>
     <div class="dhx_cal_header"></div>
-    <div class="dhx_cal_data"></div>       
+    <div class="dhx_cal_data"></div>
   </div>
 </div>
 
