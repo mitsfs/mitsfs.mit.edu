@@ -14,7 +14,7 @@ title: Schedule
 <script src="{% static '/static/scheduler/dhtmlxscheduler_tooltip.js' %}"  type="text/javascript"></script>
 
 <script>
-  //scheduler.config.show_loading = true;
+  scheduler.config.show_loading = true;
   scheduler.config.readonly = true;
   scheduler.config.first_hour = 12;
   scheduler.config.show_quick_info = false;
@@ -68,5 +68,18 @@ title: Schedule
     <div class="dhx_cal_data"></div>
   </div>
 </div>
-
+<div class="calendar-links row">
+  <div class="col-sm-6">
+    <h4>MITSFS Events</h4>
+    <a target="_blank" href="https://www.google.com/calendar/render?cid=e4bij68ddubsenh0tttpto86bk%40group.calendar.google.com&amp;ctz=America/New_York"><img src="{% static '/static/images/calendar_plus_en.gif'%}"></a>
+    <a target="_blank" href="https://www.google.com/calendar/feeds/e4bij68ddubsenh0tttpto86bk%40group.calendar.google.com/public/basic"><img src="{% static '/static/images/xml.gif'%}"></a>
+    <a target="_blank" href="https://www.google.com/calendar/ical/e4bij68ddubsenh0tttpto86bk%40group.calendar.google.com/public/basic.ics"><img src="{% static '/static/images/ical.gif'%}"></a>
+  </div>
+  <div class="col-sm-6">
+    <h4>MITSFS Library Schedule</h4>
+    <a target="_blank" href="https://www.google.com/calendar/render?cid=nec0mqhbmvui36s0bndfi0o918%40group.calendar.google.com&amp;ctz=America/New_York"><img src="{% static '/static/images/calendar_plus_en.gif'%}"></a>
+    <a target="_blank" href="https://www.google.com/calendar/feeds/nec0mqhbmvui36s0bndfi0o918%40group.calendar.google.com/public/basic"><img src="{% static '/static/images/xml.gif'%}"></a>
+    <a target="_blank" href="https://www.google.com/calendar/ical/nec0mqhbmvui36s0bndfi0o918%40group.calendar.google.com/public/basic.ics"><img src="{% static '/static/images/ical.gif'%}"></a>
+  </div>
+</div>
 {% endblock %}

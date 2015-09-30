@@ -1404,9 +1404,9 @@ div.icon_delete {
 }
 .dhx_loading {
   position: absolute;
-  width: 128px;
-  height: 15px;
-  background-image: url(imgs/loading.gif);
+  width: 30px;
+  height: 30px;
+  background-image: url(imgs_flat/loading.gif);
   z-index: 9999;
 }
 .dhx_multi_day_icon,

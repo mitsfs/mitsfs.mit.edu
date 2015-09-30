@@ -5027,7 +5027,7 @@ scheduler.attachEvent("onXLS", function() {
 		var t;
 		t = this.config.show_loading = document.createElement("DIV");
 		t.className = 'dhx_loading';
-		t.style.left = Math.round((this._x - 128) / 2) + "px";
+		t.style.left = Math.round((this._x - 15) / 2) + "px";
 		t.style.top = Math.round((this._y - 15) / 2) + "px";
 		this._obj.appendChild(t);
 	}

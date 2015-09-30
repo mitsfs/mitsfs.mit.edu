@@ -43,14 +43,24 @@ body {
   padding: ($navbar-padding-vertical - 5px) $navbar-padding-horizontal;
 }
 
+.mitsfs-seal {
+  width: 100%;
+  margin: 69px 15px;
+  @media (max-width: $screen-lg-min){
+    display: none;
+  }
+}
+
+$scheduler-bg-color: lighten($mit-light-gray, 20%);
+
 .schedule-container {
-  background-color: lighten($mit-light-gray, 20%);
+  background-color: $scheduler-bg-color;
   padding: 2px 0 0 20px;
 }
 
 
 .dhx_cal_container {
-  background-color: lighten($mit-light-gray, 20%);
+  background-color: $scheduler-bg-color;
   height: 626px;
   width: 100%;
 }
@@ -70,18 +80,18 @@ body {
 .mitsfs_events {
   
   .dhx_body, .dhx_header, .dhx_title {
-    background-color: lighten($mit-red, 0%);
-    color: lighten($mit-light-gray, 15%);
+    background-color: $navbar-inverse-bg;
+    color: $navbar-inverse-color;
   }
 }
 
 .mitsfs_library_schedule {
   .dhx_body, .dhx_header, .dhx_title {
-    color: lighten($mit-light-gray, 15%);
+    color: $navbar-inverse-color;
   }
 }
 
 .dhtmlXTooltip.tooltip {
   padding-top: 5px;
-  background-color: lighten($mit-light-gray, 20%);
+  background-color: $scheduler-bg-color;
 }
