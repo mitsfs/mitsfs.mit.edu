@@ -91,6 +91,13 @@ $scheduler-bg-color: lighten($mit-light-gray, 20%);
   }
 }
 
+.canceled_hours {
+  .dhx_body, .dhx_header, .dhx_title {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAP0lEQVQYV2NsamoyZsAB/v37d4YRlwKQJBMTkwlWBTBJkMEYCpAlMRSgS6IowCYJV4BLEqygoaHhP8i1uLwKAM7VKpccMwC8AAAAAElFTkSuQmCC);
+    text-decoration: line-through;
+  }
+}
+
 .dhtmlXTooltip.tooltip {
   padding-top: 5px;
   background-color: $scheduler-bg-color;
