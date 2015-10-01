@@ -36,7 +36,11 @@ $table-border-color:            lighten($mit-light-gray, 0%);
 
 body {
   padding-top: 50px;
-  padding-bottom: 20px;
+}
+
+.navbar-static-bottom {
+  margin-bottom: 0px;
+  padding-top: 20px;
 }
 
 .navbar-brand {
@@ -46,9 +50,6 @@ body {
 .mitsfs-seal {
   width: 100%;
   margin: 69px 15px;
-  @media (max-width: $screen-lg-min){
-    display: none;
-  }
 }
 
 $scheduler-bg-color: lighten($mit-light-gray, 20%);
@@ -56,13 +57,25 @@ $scheduler-bg-color: lighten($mit-light-gray, 20%);
 .schedule-container {
   background-color: $scheduler-bg-color;
   padding: 2px 0 0 20px;
+  
+  .dhx_cal_container {
+    background-color: $scheduler-bg-color;
+    width: 100%;
+    height: 626px;
+  }
+}
+
+.dhx_agenda_line {
+  div {
+    display: inline-block;
+  }
 }
 
 
-.dhx_cal_container {
-  background-color: $scheduler-bg-color;
-  height: 626px;
-  width: 100%;
+.dhx_agenda_area {
+  margin-right: 20px;
+  padding: 0 0 20px 20px;
+  background-color: #fff !important;
 }
 
 .dhx_scale_holder {

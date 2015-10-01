@@ -14,7 +14,7 @@
     </head>
 
     <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -53,10 +53,19 @@
           </div>
         </div><!--/.navbar-collapse -->
       </div>
-    </div>
+    </header>
 
     {% block body %}
     {% endblock %}
+
+    <footer class="navbar navbar-static-bottom" id="footer">
+      <div class="container">
+        <div class="row">
+          <p class="text-center">©MIT Science Fiction Society | {{ 'mitsfs@mit.edu' | urlize }} | (617) 258-5126<br>
+          W20-473 | 84 Massachusetts Ave. | Cambridge, MA 02139</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="{% static '/static/js/vendor/jquery-1.10.1.js' %}"></script>
     <script src="{% static '/static/js/vendor/bootstrap.js' %}"></script>
