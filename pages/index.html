@@ -14,15 +14,26 @@
     (floorplans are MIT-access only)<br>
   </p>
 
-  <p> Email to <b>mitsfs@mit.edu</b> is the best way to talk to us, though
-    you can also call 617-258-5126 (aka MIT x8-5126).</p>
+  <h4>Contact Us</h4>
   <p>
-    Send snailmail to:
-    <pre>MIT Science Fiction Society<br>W20-473<br>84 Massachusetts Avenue<br>Cambridge, MA 02139-4307</pre>
+  <strong>Email</strong>: {{ 'mitsfs@mit.edu' | urlize }}<br> 
+  <strong>Phone</strong>: 617-258-5126 (aka MIT x8-5126)<br>
+  <strong>Address</strong><br>
   </p>
+    <pre>MIT Science Fiction Society<br>W20-473<br>84 Massachusetts Avenue<br>Cambridge, MA 02139-4307</pre>
 {% endblock %}
 
 {% block side_content %}
-  <h1>Upcoming Events!</h1>
-  <iframe src="https://www.google.com/calendar/embed?title=MITSFS%20Events&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=435&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=e4bij68ddubsenh0tttpto86bk%40group.calendar.google.com&amp;color=%23FFFFFF&amp;ctz=America%2FNew_York" style=" border-width:0" width="375" height="435" frameborder="0" scrolling="no"></iframe>
+  <div class='row'>
+    <h1>Upcoming Events!</h1>
+    <iframe src="https://www.google.com/calendar/embed?title=MITSFS%20Events&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=250&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=e4bij68ddubsenh0tttpto86bk%40group.calendar.google.com&amp;color=%23FFFFFF&amp;ctz=America%2FNew_York" style=" border-width:0" width="375" height="250" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <div class='row' style="padding-top:20px">
+    <a class="twitter-timeline" href="https://twitter.com/mitsfs" data-widget-id="647160084062060548" width="375px" height="300px">Tweets by @mitsfs</a>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 {% endblock %}
