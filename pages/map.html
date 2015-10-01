@@ -1,0 +1,54 @@
+title: Library Map
+{% extends "base.html" %}
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>{{ title|default:"MIT Science Fiction Society" }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <h3>Shelfcodes</h3>
+      TODO get text version of shelfcodes
+    </div>
+    <div class="col-lg-6">
+      <h3>Shelfcodes Explanations</h3>
+      <p>For all but a few oddball categories the shelfcode format is (Items in brackets are optional.):</p>
+      <pre>[R/] size [-category]</pre>
+      <p>"R/" means "on reserve, does not circulate."  Additionally, the following also don't circulate: DICT, ARTIFACT, foreign books, doubles (e.g., Ace Doubles), and anything on the New Books shelf.  With those exceptions, anything that doesn't have the "R/" prefix does circulate.</p>
+      <p>size is based on the book's height:</p>
+      <ul>
+        <li><strong>S</strong> – up to 7¼ inches: (small)</li>
+        <li><strong>L</strong> – 7¼ to 9½ inches: (large)</li>
+        <li><strong>VL</strong> – 9½ to 12 inches: (very large)</li>
+        <li><strong>XL</strong> – above 12 inches: (extremely large)</li>
+      </ul>
+      <h4>Major catagories:</h4>
+      <ul>
+        <li><strong>(none)</strong> – Fiction, single-author works. Novels or collections of stories all by the same author. A Fiction, anthologies. Collections of stories by different authors. (Note: anthologies are alphabetized by name-of-editor.  Also, there's no hyphen for these, thus e.g. "LA" rather than "L-A".)</li>
+        <li><strong>REF</strong> – Non-fiction, reference work.</li>
+        <li><strong>CX</strong> – Comics/graphic novels.</li>
+        <li><strong>ART</strong> – Art books.</li>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Library Map</h3>
+      <img src="{% static '/static/images/floorplan_2015-01-15.png' %}" class="img-responsive">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <h3>Shelf Map 1-4</h3>
+      <img src="{% static '/static/images/sh_1-4.png' %}" class="img-responsive">
+    </div>
+    <div class="col-lg-6">
+      <h3>Shelf Map 6-9</h3>
+      <img src="{% static '/static/images/sh_6-9.png' %}" class="img-responsive">
+    </div>
+  </div>
+</div>
+{% endblock %}
