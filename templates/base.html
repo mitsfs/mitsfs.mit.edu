@@ -33,10 +33,11 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Library<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="{% if_current_page '/pinkdex.html' 'active' '' %}"><a href="{% url '/pinkdex.html' %}">Catalog</a></li>
+                <li class="{% if_current_page '/donations.html' 'active' '' %}"><a href="{% url '/donations.html' %}">Donations</a></li>
                 <li class="{% if_current_page '/map.html' 'active' '' %}"><a href="{% url '/map.html' %}">Map</a></li>
                 <li class="{% if_current_page '/memberships.html' 'active' '' %}"><a href="{% url '/memberships.html' %}">Memberships</a></li>
+                <li class="{% if_current_page '/minutes' 'active' '' %}"><a href="{% url '/minutes' %}">Minutes</a></li>
                 <li class="{% if_current_page '/rules-fines.html' 'active' '' %}"><a href="{% url '/rules-fines.html' %}">Rule &amp; Fines</a></li>
-                <li class="{% if_current_page '/donations.html' 'active' '' %}"><a href="{% url '/donations.html' %}">Donations</a></li>
               </ul>
             </li>
             <li class="dropdown">
