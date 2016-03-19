@@ -1,5 +1,23 @@
-title: Pinkdex
-{% extends "standard.html" %}
-{% block content %}
-Pinkdex is not currently integrated with the test site. Will be coming soon with a new template.
+title: {{title}}
+{% extends "base.html" %}
+
+{% block css %}
+{% verbatim %}
+{{default search = False}}
+{{if search}}
+<link rel="search" type="application/opensearchdescription+xml" {{attr(title=search['title'])}} {{attr(href=search['href'])}}>
+{{endif}}
+{% endverbatim %}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 pinkdex">
+      {% verbatim %}{{self.body | html}}{% endverbatim %}
+    </div>
+  </div>
+</div>
 {% endblock %}

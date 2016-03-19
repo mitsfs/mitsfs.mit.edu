@@ -52,6 +52,16 @@ body {
   margin: 69px 15px;
 }
 
+.pinkdex{
+  table.books {
+    background-color: lighten($mit-light-gray, 20%);;
+    width: 100%;
+    tr.odd {
+      background-color: lighten($mit-light-gray, 15%);;
+    }
+  }
+}
+
 $scheduler-bg-color: lighten($mit-light-gray, 20%);
 
 .schedule-container {
