@@ -1976,7 +1976,7 @@ scheduler.xy={
 	min_event_height:40,
 	scale_width:50,
 	scroll_width:18,
-	scale_height:20,
+	scale_height:33,
 	month_scale_height:20,
 	menu_width:25,
 	margin_top:0,
@@ -2001,12 +2001,13 @@ scheduler.set_sizes=function(){
     } else {
         this.xy.nav_height = this.xy._nav_height * 1.5;
     }
+
     this.set_xy(this._els["dhx_cal_navline"][0],w,this.xy.nav_height,0,0);
 	this.set_xy(this._els["dhx_cal_header"][0],w-scale_x,this.xy.scale_height,scale_s,this.xy.nav_height+(this._quirks?-1:1));
 	//to support alter-skin, we need a way to alter height directly from css
 	var actual_height = this._els["dhx_cal_navline"][0].offsetHeight;
 	if (actual_height > 0) this.xy.nav_height = actual_height;
-	
+
 	var data_y=this.xy.scale_height+this.xy.nav_height+(this._quirks?-2:0);
 	this.set_xy(this._els["dhx_cal_data"][0],w,h-(data_y+2),0,data_y+2);
 };
