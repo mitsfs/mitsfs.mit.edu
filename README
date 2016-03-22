@@ -3,6 +3,9 @@ MITSFS Static Website Generator
 DEPENDENCIES:
 
 pip install cactus
+# Yes this is dumb we don't actually need it but it breaks without it.
+# Cactus basically requires a deployment engine and there is none for the local filesystem so we will pretent to use google for now.
+pip install google-api-python-client==1.2
 
 Also you must install
 sass >= 3.3.0
@@ -12,10 +15,9 @@ closure-compilier
 yuicompressor
 
 TESTING
-cactus build # Test build
-cactus server # Build and serve
+make serve
 
-PRODUCTION
-cactus build -c production.json
+PRODUCTION - on Athena
+make clean && make production && make install_prodction
 
 Copy/rsync the .build directory to the production location

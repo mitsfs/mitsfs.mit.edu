@@ -9,8 +9,11 @@ dev:
 production:
 	cactus build -c production.json
 
-install:
-	rsync -avzl --del '.build/' athena.dialup.mit.edu:/mit/mitsfs/web_scripts/mitsfs.mit.edu/
+install_production:
+	rsync -avzl --del '.build/' /mit/mitsfs/ookcomm/production
+
+install_dev:
+	rsync -avzl --del '.build/' /mit/mitsfs/ookcomm/dev
 
 clean:
 	$(RM) -r .build/ .sass-cache/ static/css/ pages/reviews/ static/scheduler/*.js
