@@ -1,0 +1,8 @@
+Title: New Moon
+Author: Stephenie Meyer
+Year: 2006
+Publisher: Little, Brown and Company
+Reviewer: VanHelsingcomm
+Reviewed: 2011-09-11
+
+<img class="img-responsive" src="{% static '/static/reviews/Meyer-NewMoon.jpg' %}" alt="New Moon Review">
