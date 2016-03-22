@@ -1,0 +1,12 @@
+title: Minutes
+{% extends "standard.html" %}
+{% block content %}
+
+<p>Archive for MITSFS Friday meeting minutes</p>
+
+<ul>
+{% for path in minutes %}
+  <li><strong><a href="/minutes/{{path}}/">{{path|capfirst}} Minutes</a></strong></li>
+{% endfor %}
+</ul>
+{% endblock %}
