@@ -1,6 +1,5 @@
 Title:  Metatropolis
-Authors:  John Scalzi (ed.), Jay Lake, Tobias S. Buckell, Elizabeth Bear,
-  Karl Schroeder
+Authors:  John Scalzi (ed.), Jay Lake, Tobias S. Buckell, Elizabeth Bear, Karl Schroeder
 Year:  2010
 Publisher:  Tor
 Reviewer:  Katherine Ray
