@@ -2,6 +2,7 @@
   "prettify": true,
   "site": "mitsfs.mit.edu",
   "provider": "google",
+  "review_path": "reviews",
   "optimize": [
     "js",
     "css"

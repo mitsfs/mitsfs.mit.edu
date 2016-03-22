@@ -1,0 +1,15 @@
+{% extends "standard.html" %}
+{% block content %}
+<h4>Reviewer: {{reviewer}}</h4>
+<h4>Author: {{Author}}</h4>
+<h4>Published: {{year}}</h4>
+<h4>Reviewed: {{reviewed}}</h4>
+<h4>Publisher: {{publisher}}</h4>
+
+<p>
+{% filter linebreaksbr %}
+  {% block review %}
+  {% endblock %}
+{% endfilter %}
+</p>
+{% endblock %}

@@ -1,5 +1,6 @@
 {
   "prettify": true,
   "site": "mitsfs.mit.edu",
-  "provider": "google"
+  "provider": "google",
+  "review_path": "reviews"
 }

@@ -13,4 +13,4 @@ install:
 	rsync -avzl --del '.build/' athena.dialup.mit.edu:/mit/mitsfs/web_scripts/mitsfs.mit.edu/
 
 clean:
-	$(RM) -r .build/ .sass-cache/ static/css/
+	$(RM) -r .build/ .sass-cache/ static/css/ pages/reviews/

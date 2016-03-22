@@ -1,5 +1,32 @@
 title: Reviews
 {% extends "standard.html" %}
 {% block content %}
-Under construnction. Reviews are going to be slightly more complicated to build than other pages.
+
+<p>Here's a place for reviews by MITSFS members.</p>
+
+<p>If you're a MITSFS member and you'd like to review a book, please
+do!  Read a few of the other reviews to get a sense of the style
+(e.g. we're more interested in what sort of a book it is, rather than
+assigning it a good/bad rating).  Although there's a preference for
+new books, it's fine to review older books, especially when it's an
+author that not everybody in the world reads.  An interesting and
+well-explained opinion on any book, even one already reviewed, is
+always welcome.  When you're done, email your review to
+<strong>{{ 'kvetchcomm@mit.edu' | urlize }}</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th><th>Author</th><th>Published</th><th>Reviewer</th><th>Reviewed</th><th>Publisher</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for review in reviews.values|dictsortreversed:'reviewed' %}
+    <tr>
+      <td><a href="{% url review.path %}">{{ review.title }}</a></td><td>{{ review.author }}</td><td>{{ review.year }}</td><td>{{ review.reviewer }}</td><td>{{ review.reviewed }}</td><td>{{ review.publisher}}</td>
+    </tr>
+
+{% endfor %}
+  </tbody>
+</table>
 {% endblock %}
