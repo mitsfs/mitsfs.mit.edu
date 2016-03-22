@@ -10,9 +10,13 @@ pip install google-api-python-client==1.2
 Also you must install
 sass >= 3.3.0
 
-For production builds
+For production builds (mac)
 closure-compilier
 yuicompressor
+
+(ubuntu)
+sudo apt-get install yui-compressor
+sudo apt-get install libclosure-compiler-java
 
 TESTING
 make serve
