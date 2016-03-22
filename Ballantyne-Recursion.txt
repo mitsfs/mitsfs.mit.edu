@@ -3,6 +3,7 @@ Author: Tony Ballantyne
 Year: 2006
 Publisher: Spectra
 Reviewer: Jake Beal
+Reviewed: 2007-08-26
 
 Mr. Ballantyne has an admirable scope of ambition, envisioning in
 "Recursion" a plausible future world and consequences of information

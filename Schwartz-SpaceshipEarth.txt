@@ -3,6 +3,7 @@ Author: Tom Schwartz
 Year: 2010
 Publisher: Reagent Press
 Reviewer: Jake Beal
+Reviewed: 2011-05-28
 
 Reading a book like Mr. Schwartz's "Spaceship Earth" reminds me about
 the importance of editors.  The problem with an outfit like Reagent

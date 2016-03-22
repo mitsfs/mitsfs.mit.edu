@@ -3,6 +3,7 @@ Author: Marianne de Pierres
 Year: 2004
 Publisher: Roc
 Reviewer: Jake Beal
+Reviewed: 2006-10-02
 
 If I had to sum up this book in one word, that word would be
 "derivative."  Of course, I'm not going to sum it up in one word---you

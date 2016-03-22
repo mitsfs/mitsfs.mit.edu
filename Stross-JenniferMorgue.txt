@@ -3,6 +3,7 @@ Author: Charles Stross
 Year: 2006
 Publisher: Golden Gryphon Press
 Reviewer: Christian Ternus
+Reviewed: 2006-12-10
 
 "The Jennifer Morgue" is the sequel to Charles Stross' novel, "The
 Atrocity Archives," and features the return of Bob Howard, computer
