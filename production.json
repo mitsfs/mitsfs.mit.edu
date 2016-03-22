@@ -5,7 +5,8 @@
   "review_path": "reviews",
   "optimize": [
     "js",
-    "css"
+    "css",
+    "html"
 ],
 "fingerprint": [
     "js",

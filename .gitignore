@@ -6,3 +6,4 @@ static/css/
 .DS_Store
 /reviews
 pages/reviews/
+/static/scheduler/*.js

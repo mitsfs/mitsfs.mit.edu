@@ -6,13 +6,9 @@ title: Schedule
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static '/static/js/ical.js' %}" type="text/javascript"></script>
-<script src="{% static '/static/scheduler/dhtmlxscheduler.js' %}" type="text/javascript"></script>
-<script src="{% static '/static/scheduler/dhtmlxscheduler_multisource.js' %}" type="text/javascript"></script>
-<script src="{% static '/static/scheduler/dhtmlxscheduler_recurring.js' %}" type="text/javascript"></script>
-<script src="{% static '/static/scheduler/dhtmlxscheduler_ical.js' %}" type="text/javascript"></script>
-<script src="{% static '/static/scheduler/dhtmlxscheduler_tooltip.js' %}"  type="text/javascript"></script>
-<script src="{% static '/static/scheduler/dhtmlxscheduler_mitsfs.js' %}"  type="text/javascript"></script>
+{% for file in js_assets.calendar_js %}
+<script src="{% static file %}" type="text/javascript"></script>
+{% endfor %}
 
 <script>
   scheduler.init('mitsfs_schedule', new Date(),"week");

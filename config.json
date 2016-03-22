@@ -1,4 +1,5 @@
 {
+  "debug": true,
   "prettify": true,
   "site": "mitsfs.mit.edu",
   "provider": "google",
