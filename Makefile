@@ -18,7 +18,7 @@ install_dev:
 install_production_remote:
 	rsync -avzl --del '.build/' athena.dialup.mit.edu:/mit/mitsfs/ookcomm/production
 
-install_dev:
+install_dev_remote:
 	rsync -avzl --del '.build/' athena.dialup.mit.edu:/mit/mitsfs/ookcomm/dev
 
 clean:
