@@ -1,6 +1,7 @@
   scheduler.config.show_loading = true;
   scheduler.config.readonly = true;
-  scheduler.config.first_hour = 12;
+  scheduler.config.first_hour = 9;
+  scheduler.config.last_hour = 27;
   scheduler.config.show_quick_info = false;
   scheduler.config.occurrence_timestamp_in_utc = true;
   scheduler.config.day_date = "%D %m/%d";
