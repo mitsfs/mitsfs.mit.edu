@@ -33,6 +33,7 @@ def preBuild(site):
 
 
 def preBuildPage(site, page, context, data):
-    context['js_assets'] = JS_ASSETS
+    if page.path == 'hours.html':
+        context['js_assets'] = JS_ASSETS
 
     return context, data

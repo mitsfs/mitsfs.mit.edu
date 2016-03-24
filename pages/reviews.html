@@ -21,7 +21,7 @@ always welcome.  When you're done, email your review to
     </tr>
   </thead>
   <tbody>
-{% for review in reviews.values|dictsortreversed:'reviewed' %}
+{% for review in reviews %}
     <tr>
       <td><a href="{% url review.path %}">{{ review.title }}</a></td><td>{{ review.author }}</td><td>{{ review.year }}</td><td>{{ review.reviewer }}</td><td>{{ review.reviewed }}</td><td>{{ review.publisher}}</td>
     </tr>

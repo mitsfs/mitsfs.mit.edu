@@ -55,13 +55,19 @@ def preBuild(site):
             REVIEWS[new_file] = context
 
 
+def sort_by_review(r):
+    if 'reviewed' not in r:
+        print("Review: " + str(r) + " is missing 'reviewed key'")
+    return r['reviewed']
+
+
 def preBuildPage(site, page, context, data):
     """
     Add the list of reviews to every page context so we can
     access them from wherever on the site.
     """
     if page.path == "reviews.html":
-        context['reviews'] = REVIEWS
+        context['reviews'] = sorted(REVIEWS.values(), key=sort_by_review, reverse=True)
 
     if page.path.startswith(REVIEW_PATH):
         r_path = page.path.split('/')[-1]
