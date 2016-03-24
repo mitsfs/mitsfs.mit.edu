@@ -2,7 +2,7 @@ Title: Twilight
 Author: Stephenie Meyer
 Year: 2005
 Publisher: Little, Brown and Company
-Reviewer: VanHelsingcomm
+Reviewer: Alan Smithee
 Reviewed: 2009-12-16
 
 <img class="img-responsive" src="{% static '/static/reviews/Meyer-Twilight.jpg' %}" alt="Twilight Review">
