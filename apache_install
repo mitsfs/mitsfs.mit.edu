@@ -1,0 +1,7 @@
+cd /etc/apache2/mods-enabled && ln -s ../mods-available/expires.load expires.load
+mkdir /etc/apache2/include/
+cp /mit/mitsfs/ookcomm/website/mitsfs.conf /etc/apache2/include/mitsfs.conf
+cp /mit/mitsfs/ookcomm/website/apache.conf /etc/apache2/sites-available/mitsfs-new
+rm /etc/apache2/sites-enabled/mitsfs
+cd /etc/apache2/sites-enabled && ln -s ../sites-available/mitsfs-new mitsfs-new
+cd /mitsfs/production/web && git pull
