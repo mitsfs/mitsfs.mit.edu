@@ -30,6 +30,8 @@ $table-bg-hover:                lighten($banana-yellow, 10%);
 //** Border color for table and cell borders.
 $table-border-color:            lighten($mit-light-gray, 0%);
 
+$icon-font-path: "/static/fonts/";
+
 
 @import "bootstrap-mitsfs";
 

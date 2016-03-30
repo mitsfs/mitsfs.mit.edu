@@ -1,5 +1,17 @@
 title: Library Map
 {% extends "base.html" %}
+
+{% block scripts %}
+<script src="{% static "/static/js/tiny_table.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+  var sorter = new TINY.table.sorter("sorter");
+  sorter.asc = "active";
+  sorter.desc = "active";
+  sorter.init("table");
+  </script>
+
+{% endblock %}
+
 {% block body %}
 
 <div class="container">
@@ -11,61 +23,18 @@ title: Library Map
   <div class="row">
     <div class="col-lg-6">
       <h3>Shelfcodes</h3>
-      <table class="table table-bordered table-hover table-condensed table-striped">
+      <table id="table" class="table table-bordered table-hover table-condensed table-striped">
         <thead>
           <tr>
-            <th>Category</th><th>Code</th><th>Location</th>
+            <th>Category <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
+            <th>Code <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
+            <th>Location <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Technological Artifacts of the Lower Holocene</td><td>ARTIFACT</td><td>1 (reserve)</td></tr>
-          <tr><td>Booklet Double</td><td>BD</td><td>1 (reserve)</td></tr>
-          <tr><td>Binary Star [doubles]</td><td>BS</td><td>1 (reserve)</td></tr>
-          <tr><td>Circulating Mixed Media</td><td>C/MM</td><td>9</td></tr>
-          <tr><td>Ace Double</td><td>D</td><td>1 (reserve)</td></tr>
-          <tr><td>Dictionary</td><td>DICT</td><td>1 (reserve)</td></tr>
-          <tr><td>Eraserhead Double</td><td>ERD</td><td>1 (reserve)</td></tr>
-          <tr><td>Foreign-language Hardcover Anthology</td><td>FH</td><td>5 (reserve)</td></tr>
-          <tr><td>Foreign-language Hardcover Anthology</td><td>FHA</td><td>5 (reserve)</td></tr>
-          <tr><td>Foreign-language Paperback Anthology</td><td>FP</td><td>5 (reserve)</td></tr>
-          <tr><td>Foreign-language Paperback Anthology</td><td>FPA</td><td>5 (reserve)</td></tr>
-          <tr><td>Gryphon Double</td><td>GRD</td><td>1 (reserve)</td></tr>
-          <tr><td>Gollancz Double</td><td>GZD</td><td>1 (reserve)</td></tr>
-          <tr><td>Large Fiction</td><td>L</td><td>55 -- 79, 111 -- 145</td></tr>
-          <tr><td>Large Circulating Comics</td><td>L-CX</td><td>9</td></tr>
-          <tr><td>Large Circulating Reference</td><td>L-REF</td><td>7</td></tr>
-          <tr><td>Large Anthology</td><td>LA</td><td>80 -- 82, tops of 92 -- 110, tops of 83 -- 87</td></tr>
-          <tr><td>Millennium Binary [doubles]</td><td>MB</td><td>1 (reserve)</td></tr>
-          <tr><td>Ocean View Doubles</td><td>OVD</td><td>1 (reserve)</td></tr>
-          <tr><td>Large Reserve Art</td><td>R/L-ART</td><td>1 (reserve)</td></tr>
-          <tr><td>Large Reserve Comics</td><td>R/L-CX</td><td>3 (reserve)</td></tr>
-          <tr><td>Large Reserve Reference</td><td>R/L-REF</td><td>4 (reserve)</td></tr>
-          <tr><td>Reserve Multimedia</td><td>R/MM</td><td>4 (reserve)</td></tr>
-          <tr><td>Small Reserve Comics</td><td>R/S-CX</td><td>3 (reserve)</td></tr>
-          <tr><td>Small Reserve Reference</td><td>R/S-REF</td><td>4 (reserve)</td></tr>
-          <tr><td>Very Large Reserve Fiction</td><td>R/VL</td><td>1 (reserve)</td></tr>
-          <tr><td>Very Large Reserve Art</td><td>R/VL-ART</td><td>1 (reserve)</td></tr>
-          <tr><td>Very Large Reserve Comics</td><td>R/VL-CX</td><td>3 &amp; 4 (reserve)</td></tr>
-          <tr><td>Very Large Reserve Reference</td><td>R/VL-REF</td><td>4 (reserve)</td></tr>
-          <tr><td>Very Large Reserve Anthology</td><td>R/VLA</td><td>1 (reserve)</td></tr>
-          <tr><td>Even Bigger Reserve Fiction</td><td>R/XL</td><td>4 (reserve)</td></tr>
-          <tr><td>Even Bigger Reserve Art</td><td>R/XL-ART</td><td>1 (reserve)</td></tr>
-          <tr><td>Even Bigger Reserve Comics</td><td>R/XL-CX</td><td>4 (reserve)</td></tr>
-          <tr><td>Even Bigger Reserve Reference</td><td>R/XL-REF</td><td>4 (reserve)</td></tr>
-          <tr><td>Even Bigger Reserve Anthology</td><td>R/XLA</td><td>4 (reserve)</td></tr>
-          <tr><td>Small Fiction (authors A-L)</td><td>S</td><td>17 -- 54</td></tr>
-          <tr><td>Small Fiction (authors M-Z)</td><td>S</td><td>83 -- 110</td></tr>
-          <tr><td>Small Circulating Comics</td><td>S-CX</td><td>9</td></tr>
-          <tr><td>Small Circulating Reference</td><td>S-REF</td><td>6</td></tr>
-          <tr><td>Small Anthology</td><td>SA</td><td>10 -- 17</td></tr>
-          <tr><td>Tor Double</td><td>TD</td><td>1 (reserve)</td></tr>
-          <tr><td>Very Large Circulating Fiction</td><td>VL</td><td>9</td></tr>
-          <tr><td>Very Large Circulating Reference</td><td>VL-REF</td><td>6 &amp; 7</td></tr>
-          <tr><td>Very Large Circulating Comics</td><td>VL/CX</td><td>9</td></tr>
-          <tr><td>Very Large Circulating Anthology</td><td>VLA</td><td>9</td></tr>
-          <tr><td>Even Bigger Circulating Reference</td><td>XL-REF</td><td>7 &amp; 8</td></tr>
-          <tr><td>(New Books)</td><td> </td><td>2 (reserve)</td></tr>
-          <tr><td>(Recent Magazines)</td><td> </td><td>3 &amp; 4 (reserve)</td></tr>
+          {% for shelfcode in shelfcodes %}
+            <tr><td>{{ shelfcode.name }}</td><td>{{ shelfcode.code }}</td><td>{{ shelfcode.shelf }}</td></tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
