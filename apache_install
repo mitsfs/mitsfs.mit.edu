@@ -1,7 +1,21 @@
+# Change the new to the old apache configuration
+
+# The new apache configuration uses the expires module
 cd /etc/apache2/mods-enabled && ln -s ../mods-available/expires.load expires.load
+
+# The new apache config imports a bunch of config (to reduce duplication in the ssl and non ssl confuration)
 mkdir /etc/apache2/include/
 cp /mit/mitsfs/ookcomm/website/mitsfs.conf /etc/apache2/include/mitsfs.conf
+
+# Copy the new apache config to sites-available
 cp /mit/mitsfs/ookcomm/website/apache.config /etc/apache2/sites-available/mitsfs-new.conf
+
+# Remove the old apache config simlink and make a new one
 rm /etc/apache2/sites-enabled/mitsfs
-cd /etc/apache2/sites-enabled && ln -s ../sites-available/mitsfs-new mitsfs-new
+cd /etc/apache2/sites-enabled && ln -s ../sites-available/mitsfs-new.conf mitsfs-new.conf
+
+# Reload Apache
+/etc/init.d/apache2 reload
+
+# Pull the new pinkdex template changes
 cd /mitsfs/production/web && git pull
