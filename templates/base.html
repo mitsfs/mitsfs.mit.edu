@@ -41,7 +41,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">SF Resources<b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="{% if_current_page '/gooddex.html' 'active' '' %}"><a href="{% url '/gooddex.html' %}">Book Recomendations</a></li>
                 <li class="{% if_current_page '/related-groups.html' 'active' '' %}"><a href="{% url '/related-groups.html' %}">Related MIT Groups</a></li>
@@ -50,8 +50,8 @@
               </ul>
             </li>
           </ul>
-          <div class="navbar-form navbar-right">
-             <!-- Door open goes here when implemented -->
+          <div class="navbar-right">
+             <iframe width="128px" height="45px" frameBorder="0" scrolling="no" src="https://mitsfs.scripts.mit.edu/door/door.py"></iframe>
           </div>
         </div><!--/.navbar-collapse -->
       </div>
