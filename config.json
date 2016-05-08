@@ -3,5 +3,9 @@
   "prettify": true,
   "site": "mitsfs.mit.edu",
   "provider": "google",
-  "review_path": "reviews"
+  "review_path": "reviews",
+  "fingerprint": [
+    "js",
+    "css"
+]
 }
