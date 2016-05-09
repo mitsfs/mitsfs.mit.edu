@@ -3,6 +3,7 @@
   "site": "mitsfs.mit.edu",
   "provider": "google",
   "review_path": "reviews",
+  "site-url": "http://mitsfs.mit.edu",
   "optimize": [
     "js",
     "css",

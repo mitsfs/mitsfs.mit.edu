@@ -6,6 +6,7 @@
         <title>{% if title %}{{ title }} - {% endif %}MIT Science Fiction Society</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <link rel="canonical" href="{{ CURRENT_PAGE.absolute_final_url }}" />
         <link rel="shortcut icon" href="{% static '/static/images/favicon.ico' %}">
         {% block css %}
         {% endblock %}
