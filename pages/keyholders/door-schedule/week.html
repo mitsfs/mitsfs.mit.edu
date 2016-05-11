@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% if title %}{{ title }} - {% endif %}MIT Science Fiction Society</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="canonical" href="{{ CURRENT_PAGE.absolute_final_url }}" />
+        <link rel="shortcut icon" href="{% static '/static/images/favicon.ico' %}">
+        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+        <link rel="stylesheet" href="{% static '/static/scheduler/dhtmlxscheduler_flat.css' %}" type="text/css">
+    </head>
+
+    <div class="panel schedule-container door-schedule-container">
+      <div id="mitsfs_schedule" class="dhx_cal_container panel">
+        <div class="dhx_cal_navline row">
+          <div class="col-sm-7">
+            <div class="dhx_cal_date"></div>
+          </div>
+        </div>
+        <div class="dhx_cal_header"></div>
+        <div class="dhx_cal_data"></div>
+      </div>
+    </div>
+  </body>
+  {% for file in js_assets.calendar_js %}
+  <script src="{% static file %}" type="text/javascript"></script>
+  {% endfor %}
+
+  <script>
+    scheduler.init('mitsfs_schedule', getCalendarOffsetFromParam("date"),"week");
+    var urls = ["https://mitsfs.scripts.mit.edu/calendar/events", "https://mitsfs.scripts.mit.edu/calendar/schedule"]
+    scheduler.load(urls, 'ical');
+    setInterval(function(){
+      scheduler.load(urls, 'ical', function(){
+        scheduler.updateView(getCalendarOffsetFromParam("date"),"week");
+      });
+    }, 60*5*1000);
+    
+  </script>
+</html>

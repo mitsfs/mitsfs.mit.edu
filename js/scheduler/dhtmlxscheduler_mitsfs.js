@@ -28,3 +28,23 @@
   scheduler.templates.day_scale_date = function(date){
     return scheduler.date.date_to_str("%D %m/%d")(date);
   };
+
+ function getUrlParameter(sParam) {
+  var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+  sURLVariables = sPageURL.split('&'),
+  sParameterName,
+  i;
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : sParameterName[1];
+    }
+  }
+}
+
+function getCalendarOffsetFromParam(param){
+  var offset = parseInt(getUrlParameter('date'), 10);
+  var now = new Date();
+  now.setDate(now.getDate()+offset);
+  return now;
+}

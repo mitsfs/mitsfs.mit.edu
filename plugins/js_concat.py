@@ -33,7 +33,7 @@ def preBuild(site):
 
 
 def preBuildPage(site, page, context, data):
-    if page.path == 'hours.html':
+    if page.path in ['hours.html', 'keyholders/door-schedule/week.html']:
         context['js_assets'] = JS_ASSETS
 
     return context, data

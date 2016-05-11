@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% if title %}{{ title }} - {% endif %}MIT Science Fiction Society</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="canonical" href="{{ CURRENT_PAGE.absolute_final_url }}" />
+        <link rel="shortcut icon" href="{% static '/static/images/favicon.ico' %}">
+        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+    </head>
+
+    <body>
+    <header class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url "/index.html" %}"><img alt="MIT Science Fiction Society" src="{% static '/static/images/banana.svg' %}" width="30px" height="30px"></a>
+        </div>
+        <p class='navbar-text'>MIT Science Fiction Library — Schedule</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <iframe width="100%" height="825px" frameborder="0" scrolling="no" src="{% url '/keyholders/door-schedule/week.html' %}?date=0"></iframe>
+        <iframe width="100%" height="825px" frameborder="0" scrolling="no" src="{% url '/keyholders/door-schedule/week.html' %}?date=7"></iframe>
+        <iframe width="100%" height="825px" frameborder="0" scrolling="no" src="{% url '/keyholders/door-schedule/week.html' %}?date=14"></iframe>
+      </div>
+    </div>
+    
+    <footer class="navbar navbar-static-bottom" id="footer">
+      <div class="container">
+        <div class="row">
+          <p class="text-center">©MIT Science Fiction Society | {{ 'mitsfs@mit.edu' | urlize }} | (617) 258-5126<br>
+          W20-473 | 84 Massachusetts Ave. | Cambridge, MA 02139</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
