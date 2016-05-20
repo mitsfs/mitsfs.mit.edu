@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(.*)$ pinkdex.py?$1 [QSA]
