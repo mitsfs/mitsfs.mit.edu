@@ -1,0 +1,12 @@
+ErrorDocument 404 /error/index.html
+
+Redirect permanent /www/donation-faq.html http://mitsfs.mit.edu/donations
+Redirect permanent /www/dues.html http://mitsfs.mit.edu/memberships
+Redirect permanent /www/gooddex.html http://mitsfs.mit.edu/gooddex
+Redirect permanent /www/dues.html http://mitsfs.mit.edu/memberships
+Redirect permanent /www/related-groups.html http://mitsfs.mit.edu/related-groups
+Redirect permanent /www/rules-fines.pdf http://mitsfs.mit.edu/rules-fines
+Redirect permanent /www/schedule.html http://mitsfs.mit.edu/schedule
+Redirect permanent /www/schedule.txt http://mitsfs.mit.edu/schedule
+Redirect permanent /www/sf-resources.html http://mitsfs.mit.edu/sf-resources
+RedirectMatch ^/www/(.*)$ http://mitsfs.mit.edu/$1
