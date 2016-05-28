@@ -9,4 +9,4 @@ Redirect permanent /www/rules-fines.pdf http://mitsfs.mit.edu/rules-fines
 Redirect permanent /www/schedule.html http://mitsfs.mit.edu/schedule
 Redirect permanent /www/schedule.txt http://mitsfs.mit.edu/schedule
 Redirect permanent /www/sf-resources.html http://mitsfs.mit.edu/sf-resources
-RedirectMatch ^/www/(.*)$ http://mitsfs.mit.edu/$1
+RedirectMatch ^/www(.*)$ http://mitsfs.mit.edu$1
