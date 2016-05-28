@@ -83,6 +83,24 @@ $scheduler-bg-color: lighten($mit-light-gray, 20%);
   }
 }
 
+.schedule-container.door-schedule-container {
+  .dhx_scale_bar {
+    font-size: 18px;
+  }
+  .dhx_scale_hour {
+    font-size: 16px;
+  }
+  .dhx_cal_event {
+    .dhx_body, .dhx_cal_event_line{
+      font-size: 16px;
+    }
+
+    .dhx_title {
+      font-size: 14px;
+    }
+
+  }
+}
 
 .dhx_agenda_area {
   margin-right: 20px;

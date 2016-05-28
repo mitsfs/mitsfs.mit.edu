@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
     </head>
 
-    <body>
+    <body style="overflow:hidden">
     <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -25,7 +25,6 @@
       <div class="row">
         <iframe width="100%" height="825px" frameborder="0" scrolling="no" src="{% url '/keyholders/door-schedule/week.html' %}?date=0"></iframe>
         <iframe width="100%" height="825px" frameborder="0" scrolling="no" src="{% url '/keyholders/door-schedule/week.html' %}?date=7"></iframe>
-        <iframe width="100%" height="825px" frameborder="0" scrolling="no" src="{% url '/keyholders/door-schedule/week.html' %}?date=14"></iframe>
       </div>
     </div>
     

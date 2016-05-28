@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="refresh" content="900" >
         <title>{% if title %}{{ title }} - {% endif %}MIT Science Fiction Society</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
@@ -32,11 +33,12 @@
     scheduler.init('mitsfs_schedule', getCalendarOffsetFromParam("date"),"week");
     var urls = ["https://mitsfs.scripts.mit.edu/calendar/events", "https://mitsfs.scripts.mit.edu/calendar/schedule"]
     scheduler.load(urls, 'ical');
-    setInterval(function(){
-      scheduler.load(urls, 'ical', function(){
-        scheduler.updateView(getCalendarOffsetFromParam("date"),"week");
-      });
-    }, 60*5*1000);
+    // Script errors we are goint to refresh whole page for now.
+    //setInterval(function(){
+    //  scheduler.load(urls, 'ical', function(){
+    //    scheduler.updateView(getCalendarOffsetFromParam("date"),"week");
+    //  });
+    //}, 60*5*1000);
     
   </script>
 </html>
