@@ -4,6 +4,7 @@
   scheduler.config.last_hour = 24;
   scheduler.config.show_quick_info = false;
   scheduler.config.occurrence_timestamp_in_utc = true;
+  scheduler.config.start_on_monday = false;
   scheduler.config.day_date = "%D %m/%d";
   scheduler.config.default_date = "%l, %M-%d, %Y";
   dhtmlXTooltip.config.className = 'dhtmlXTooltip tooltip'; 
