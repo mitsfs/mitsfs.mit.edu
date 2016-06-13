@@ -29,7 +29,6 @@
           <ul class="nav navbar-nav">
             <li class="{% if_current_page '/index.html' 'active' '' %}"><a href="{% url '/index.html' %}">MIT Science Fiction Society</a></li>
             <li class="{% if_current_page '/hours.html' 'active' '' %}"><a href="{% url '/hours.html' %}">Hours</a></li>
-            <li class="{% if_current_page '/reviews.html' 'active' '' %}"><a href="{% url '/reviews.html' %}">Reviews</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Library<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -46,6 +45,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="{% if_current_page '/gooddex.html' 'active' '' %}"><a href="{% url '/gooddex.html' %}">Book Recomendations</a></li>
+                <li class="{% if_current_page '/reviews.html' 'active' '' %}"><a href="{% url '/reviews.html' %}">Reviews</a></li>
                 <li class="{% if_current_page '/related-groups.html' 'active' '' %}"><a href="{% url '/related-groups.html' %}">Related MIT Groups</a></li>
                 <li class="{% if_current_page '/sf-resources.html' 'active' '' %}"><a href="{% url '/sf-resources.html' %}">External Science Fiction Resources</a></li>
                 <li><a href="https://sq.wikipedia.org/wiki/Gjuha_Shqipe">Albania: Land of the Eagles</a></li>
