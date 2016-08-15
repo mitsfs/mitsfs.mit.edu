@@ -10,6 +10,6 @@ def app(environ, start_response):
     url = "http://mitsfs.mit.edu/pinkdex?" + environ['QUERY_STRING']
     r = requests.get(url, proxies=proxies)
     start_response(str(r.status_code) + " " + r.reason, r.headers.items())
-    yield str(r.text)
+    yield unicode(r.text).encode("utf-8")
 
 WSGIServer(app).run()
