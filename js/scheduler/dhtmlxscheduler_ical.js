@@ -13,19 +13,36 @@ scheduler.ical_frequencies = {
   SECONDLY: "second"
 };
 
+function convertDate(d, tz){
+  if (d.zone != ICAL.Timezone.localTimezone) {
+      d = d.convertToZone(tz);
+      d.zone = ICAL.Timezone.localTimezone;
+  }
+  return d.toJSDate();
+}
+
 scheduler.ical = {
   parse:function(str){
     var calendar = new ICAL.Component(ICAL.parse(str));
     var events = calendar.getAllSubcomponents("vevent");
     var name = calendar.getFirstPropertyValue("x-wr-calname").toLowerCase().replace(/\s+/g, "_");
+    var vtimezones = calendar.getAllSubcomponents('vtimezone');
+    var tz = ICAL.Timezone.utcTimezone;
+    for (var i = 0; i < vtimezones.length; i++){
+      timezone = new ICAL.Timezone(vtimezones[i]);
+      if (timezone.tzid == "America/New_York") {
+        tz = timezone;
+      }
+    }
+
     array = [];
     for (var i = 0; i < events.length; i++) {
       var event = new ICAL.Event(events[i]);
       var newEvent = {
         text: event.summary,
         calendar_name: name,
-        start_date: event.startDate.toJSDate(),
-        end_date: event.endDate.toJSDate(),
+        start_date: convertDate(event.startDate, tz),
+        end_date: convertDate(event.endDate, tz),
         details: event.description,
         location: event.location,
         event_pid: 0
@@ -37,7 +54,7 @@ scheduler.ical = {
         rrule = event.component.getFirstPropertyValue("rrule");
 
         if (rrule.until){
-          newEvent.end_date = rrule.until.toJSDate();
+          newEvent.end_date = convertDate(rrule.until, tz);
         } else {
           newEvent.end_date = new Date();
           newEvent.end_date.setMonth(newEvent.end_date.getMonth()+4);
@@ -57,8 +74,8 @@ scheduler.ical = {
           // Deletions
           var delDate = exceptions[j].getFirstValue();
           var delEvent = {
-            start_date: delDate.toJSDate(),
-            end_date: delDate.toJSDate(),
+            start_date: convertDate(delDate, tz),
+            end_date: convertDate(delDate, tz),
             event_length: delDate.toUnixTime(),
             event_pid: event.uid,
             text: newEvent.text,
@@ -70,7 +87,7 @@ scheduler.ical = {
         newEvent.event_pid = event.uid;
         newEvent.event_length = event.recurrenceId.toUnixTime();
       } else {
-        // Don't need anything special for basic events        
+        // Don't need anything special for basic events
       }
       array.push(newEvent);
     }

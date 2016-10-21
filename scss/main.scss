@@ -69,7 +69,7 @@ $scheduler-bg-color: lighten($mit-light-gray, 20%);
 .schedule-container {
   background-color: $scheduler-bg-color;
   padding: 2px 0 0 20px;
-  
+
   .dhx_cal_container {
     background-color: $scheduler-bg-color;
     width: 100%;
@@ -121,7 +121,7 @@ $scheduler-bg-color: lighten($mit-light-gray, 20%);
 }
 
 .mitsfs_events {
-  
+
   .dhx_body, .dhx_header, .dhx_title {
     background-color: $navbar-inverse-bg;
     color: $navbar-inverse-color;
