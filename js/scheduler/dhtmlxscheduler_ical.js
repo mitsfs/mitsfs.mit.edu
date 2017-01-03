@@ -54,7 +54,12 @@ scheduler.ical = {
         rrule = event.component.getFirstPropertyValue("rrule");
 
         if (rrule.until){
-          newEvent.end_date = convertDate(rrule.until, tz);
+          // The recurrence library already calculates TZ offsets so we need to undo this effect
+          var ed = convertDate(rrule.until, tz);
+          var offset = newEvent.start_date.getTimezoneOffset() - ed.getTimezoneOffset();
+          ed.setMinutes(ed.getMinutes() - offset);
+          ed.setSeconds(ed.getSeconds() + newEvent.event_length);
+          newEvent.end_date = ed;
         } else {
           newEvent.end_date = new Date();
           newEvent.end_date.setMonth(newEvent.end_date.getMonth()+4);
