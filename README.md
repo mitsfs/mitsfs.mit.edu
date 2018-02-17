@@ -1,5 +1,17 @@
 # MITSFS Static Website Generator
 
+
+## Building using Docker
+
+```
+docker build . -t mitsfs
+docker run --rm -iv${PWD}:/host mitsfs sh -s <<EOF
+  chown -vR $(id -u):$(id -g) .build
+  cp -rva .build/ /host/
+EOF
+```
+
+
 ## Dependencies:
 
     pip install cactus
