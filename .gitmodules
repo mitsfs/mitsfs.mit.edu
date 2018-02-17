@@ -1,3 +1,3 @@
 [submodule "reviews"]
 	path = reviews
-	url = git@github.com:mitsfs/reviews.git
+	url = https://github.com/mitsfs/reviews.git
