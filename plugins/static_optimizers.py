@@ -1,7 +1,47 @@
 #coding:utf-8
-from cactus.contrib.external.closure import ClosureJSOptimizer
-from cactus.contrib.external.yui import YUICSSOptimizer
 
+import subprocess
+from cactus.static.external import External
+
+
+class ClosureJSOptimizer(External):
+    supported_extensions = ('js',)
+    output_extension = 'js'
+
+    def _run(self):
+        subprocess.check_call([
+            'closure-compiler',
+            '--language_in', 'ECMASCRIPT5',
+            '--js', self.src,
+            '--js_output_file', self.dst,
+            '--compilation_level', 'SIMPLE_OPTIMIZATIONS'
+])
+
+
+class YUIJSOptimizer(External):
+    supported_extensions = ('js',)
+    output_extension = 'js'
+
+    def _run(self):
+        subprocess.check_call([
+            'yui-compressor',
+            '--type', 'js',
+            '-o', self.dst,
+            self.src,
+        ])
+
+
+class YUICSSOptimizer(External):
+    supported_extensions = ('css',)
+    output_extension = 'css'
+
+    def _run(self):
+        subprocess.check_call([
+            'yui-compressor',
+            '--type', 'css',
+            '-o', self.dst,
+            self.src,
+])
 
 def preBuild(site):
     """
