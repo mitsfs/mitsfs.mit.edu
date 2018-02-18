@@ -2,19 +2,14 @@
 
 
 ## Contributing
-
-
-## Deploying
-
-Once the build is built on master ssh to athena.dialup.mit.edu and run
-
-```
-https://github.com/mitsfs/mitsfs.mit.edu/releases/latest/mitsfs.mit.edu.tar.gz
-```
+Feel free to submit pull requests to contribute. If you are making small text
+changes feel free to use the Github editor to make changes. Otherwise you will
+probably need to learn git and test your changes.
 
 ## Testing Using Docker
 
-This will build and run a test server using docker. Currently you will have to rerun the commands on a change.
+This will build and run a test server using docker. Currently you will have to
+rerun the commands on a change.
 
 ```
 docker build . -t mitsfs
@@ -33,6 +28,23 @@ docker run --rm -iv${PWD}:/host mitsfs sh -s <<EOF
   cp -rva .build/ /host/
 EOF
 ```
+
+## Deploying
+
+### Dev
+
+Once the build is built on master ssh to athena.dialup.mit.edu and run
+
+`athrun mitsfs mitsfs-web-install`
+
+Go to `http://web-test.mitsfs.scripts.mit.edu` to test
+
+### Production
+
+`athrun mitsfs mitsfs-web-install --production`
+
+Go to `http://mitsfs.mit.edu` to test.
+
 
 
 ## Dependencies:

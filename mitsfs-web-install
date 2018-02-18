@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+INSTALL_DIR=/mit/mitsfs/ookcomm
+USER=mitsfs
+REPO=mitsfs.mit.edu
+
+
+if [ "$1" == "--production" ]; then
+   INSTALL_DIR="$INSTALL_DIR/production"
+else
+   INSTALL_DIR="$INSTALL_DIR/dev"
+fi
+
+URL=$(curl -s "https://api.github.com/repos/$USER/$REPO/releases/latest" | grep 'browser_' | cut -d\" -f4)
+
+echo "Downloading $URL"
+echo "         to $INSTALL_DIR"
+
+curl -sL $URL | tar -xzvf - -C $INSTALL_DIR
