@@ -1,11 +1,34 @@
 # MITSFS Static Website Generator
 
 
+## Contributing
+
+
+## Deploying
+
+Once the build is built on master ssh to athena.dialup.mit.edu and run
+
+```
+https://github.com/mitsfs/mitsfs.mit.edu/releases/latest/mitsfs.mit.edu.tar.gz
+```
+
+## Testing Using Docker
+
+This will build and run a test server using docker. Currently you will have to rerun the commands on a change.
+
+```
+docker build . -t mitsfs
+docker run -p 8000:8000 mitsfs
+```
+
 ## Building using Docker
+
+This builds and copies the website to your .build directory.
 
 ```
 docker build . -t mitsfs
 docker run --rm -iv${PWD}:/host mitsfs sh -s <<EOF
+  cactus build -c production.json
   chown -vR $(id -u):$(id -g) .build
   cp -rva .build/ /host/
 EOF

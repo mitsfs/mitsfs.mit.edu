@@ -5,6 +5,7 @@ script:
 - docker build . -t mitsfs
 - |
   docker run --rm -iv${PWD}:/host mitsfs sh -s << EOF
+    cactus build -c production.json
     chown -vR $(id -u):$(id -g) .build
     cp -rva .build/ /host/
   EOF
@@ -15,10 +16,6 @@ deploy:
     secure: sFK1ljd+4xx3/Qqj2nmmeuJMXD4+/h2CZ2afApk3z9FU/ZaL32xhl9aDYTuoTJ9U67YAtSUiB2+YisyBoRiR8ssuXZz6oXH461OaUY1iqBfHmx+ytuIY60ibUrvQfKbLp7ZMRooa8mmUA5Jt0vD3Dz9JTRc2wrWlS8/W0Anz8gxqg7SXgK84BUAPeoRq8FQh/lA8cwWD6qm4TdZ3tEMkg2XsZTt0PscZXZ94hXid19vrDZm16+Dx8BQ0yzTqItIYd51walJxO+RQgkI2Vn3TI98VfRHIcIAyQ8Z6IJHczS+njegYP3S//pb+Dz6kgG0balCTGaaxJzJaRF2iKQ8wP5LlK/Pi2008UbGV3p+/Fhrh8Mu/vNDhH0jUv2td4lXIs8rPe+eaTdGzTfXaETcjHZkG35AvvsAkUDPfCWQiz5CzNF56PbLxHBv/oXRQk+8rykYDmp75YHxWmBOr4EfBSMQFQqqoWg+TmC1NXnQcUdIPP9ChiFq0UKzh6xgpYk344naqoCXGTK1fvcOnDfW3mR9ED4GOU8n4DqI93zwkAtV3OmqTD1dvcmK+ADAEPhqQ+02VeRgO8Th9CtCxalHro3NcTtejYGwzID1Bozq8G7JVpeKFhLQgB9w0aKoD7nxdtibYjWXQ4tfI1e7iMFSnaYbLAqvxxZVzkv8UUOTYYNE=
   file: mitsfs.mit.edu.tar.gz
   skip_cleanup: true
-  on:
-    repo: mitsfs/mitsfs.mit.edu
-    branch: master
-
   on:
     repo: mitsfs/mitsfs.mit.edu
     branch: master
