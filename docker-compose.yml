@@ -1,0 +1,24 @@
+verion: '2'
+volumes:
+  mitsfs-schedule:
+services:
+  door-sensor:
+    build: ./door-sensor
+    devices:
+      - "/sys/class/gpio:/sys/class/gpio"
+      - "/dev/mem:/dev/mem"
+    cap_add: 
+      - SYS_RAWIO
+    restart: always
+  door-schedule:
+    build: ./door-schedule
+    depends_on: door-schedule-pull
+    privileged: true
+    restart: always
+    volumes:
+      - 'mitsfs-schedule:/data'
+  door-schedule-pull:
+    build: ./door-schedule/pull
+    restart: always
+    volumes:
+      - 'mitsfs-schedule:/data'

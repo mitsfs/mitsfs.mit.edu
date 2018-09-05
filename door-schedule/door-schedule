@@ -1,0 +1,8 @@
+#!/bin/bash
+
+xset -dpms # disable DPMS (Energy Star) features.
+xset s off # disable screen saver
+xset s noblank # don't blank the video device
+export $(dbus-launch)
+rm -r ~/.cache/mozilla/firefox/
+TZ='America/New_York' firefox --no-remote file:///mitsfs/keyholders/door-schedule

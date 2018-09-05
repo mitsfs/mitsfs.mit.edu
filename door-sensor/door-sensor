@@ -1,0 +1,25 @@
+#!/bin/bash
+
+TIMEOUT=120
+PIN=26
+URL=http://mitsfs.mit.edu/keyholders/door-sensor/upload/
+
+if [ ! -f "$LOG" ]; then
+    echo "File $LOG not found!"
+    exit 1
+fi
+
+gpio -g mode $PIN in
+gpio -g mode $PIN up
+
+while :
+do
+      timeout --foreground --preserve-status $TIMEOUT gpio -g wfi $PIN both
+      state=`gpio -g read $PIN`
+      case $state in
+          1*) human="open";;
+          0*) human="closed";;
+          *) human="error";;
+      esac
+      curl -m 5 -X POST -d "$state,$human,$(date -u +%s),$(date -u +"%Y-%m-%dT%H:%M:%S%z")" "$URL"
+done
