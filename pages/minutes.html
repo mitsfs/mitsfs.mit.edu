@@ -5,7 +5,7 @@ title: Minutes
 <h4>Archive for MITSFS Friday meeting minutes</h4>
 
 <p> If you are really interested at what goes on at our meetings, you can read
-what may be our <a href="/minutes/latest/">latest minutes.</a> If you think
+what may be our <a href="/minutes/archive/latest/">latest minutes.</a> If you think
 those are a fluke and we've got to be more intelligible than that most of the
 time you can browse through some older minutes, but you're pretty much
 doomed.</p>
@@ -14,5 +14,6 @@ doomed.</p>
 {% for path in minutes %}
   <li><strong><a href="/minutes/archive/{{path}}/">{{path|capfirst}} Minutes</a></strong></li>
 {% endfor %}
+  <li><strong><a href="/minutes/archive/">All Minutes</a></strong></li>
 </ul>
 {% endblock %}
