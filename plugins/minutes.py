@@ -1,5 +1,6 @@
 
 MINUTES = ["latest",
+           "2021",
            "2020"]
 
 ORDER = 10
